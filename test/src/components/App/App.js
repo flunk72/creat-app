@@ -4,9 +4,7 @@ import './App.css';
 
 export class App extends Component {
   state = {
-    goods: [],
-    isName: false,
-    isCount: false
+    goods: []
   }
     componentDidMount() {
       fetch('http://localhost:3000/data.json')
@@ -17,13 +15,13 @@ export class App extends Component {
           ))
         )
     }
-    const newName
+    
     render () {
       return (
       <div>
         <div className="sorting-block">
         Сортировать по:
-          <button className="sorting-btn">Имени</button>
+          <button className="sorting-btn" onClick={() => this.sortBy('name')}>Имени</button>
           <button className="sorting-btn">Дате</button>
           <button className="sorting-btn">Количеству</button>
         </div>
