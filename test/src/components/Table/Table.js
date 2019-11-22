@@ -2,7 +2,6 @@ import React from 'react';
 import './table.css';
 
 export const Table = ({data}) => (
-  
 <table className="table">
   <thead>
     <tr>
@@ -12,7 +11,7 @@ export const Table = ({data}) => (
     </tr>
   </thead>
   <tbody>
-    {this.state.data.map(t =>(
+    {data.map(t =>(
       <tr key={t.id}>
         <td>{t.name}</td>
         <td>{t.date}</td>

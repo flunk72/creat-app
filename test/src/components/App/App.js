@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import { Table } from '../Table';
+import { sortBy } from 'lodash';
 import './App.css';
 
 export class App extends Component {
   state = {
-    goods: [],
-    isName: false,
-    isCount: false
+    goods: []
   }
     componentDidMount() {
       fetch('http://localhost:3000/data.json')
@@ -17,13 +16,15 @@ export class App extends Component {
           ))
         )
     }
-
+    
   render() {
 
     return (
+      
       <div className="container">
-      <Table data={this.state.goods}/>
-      </div>
+        <Table data={this.state.goods}
+        />
+        </div>
         )
     }
 }
