@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-
+import { Table } from '../Table';
 import './App.css';
 
 export class App extends Component {
   state = {
-    goods: []
+    goods: [],
+    isName: false,
+    isCount: false
   }
     componentDidMount() {
       fetch('http://localhost:3000/data.json')
@@ -15,42 +17,13 @@ export class App extends Component {
           ))
         )
     }
-    
-    render () {
-      return (
-      <div>
-        <div className="sorting-block">
-        Сортировать по:
-          <button className="sorting-btn" onClick={() => this.sortBy('name')}>Имени</button>
-          <button className="sorting-btn">Дате</button>
-          <button className="sorting-btn">Количеству</button>
-        </div>
-        <div className="table">
-          <div className="container">
-            <div className="table-name">
-              {this.state.goods.map(g =>
-              <div key={g.id}>
-              <span>{g.name}</span>
-            </div>
-            )}
-            </div>
-            <div className="table-date">
-            {this.state.goods.map(g =>
-            <div key={g.id}>
-              <span>{g.date}</span>
-            </div>
-            )}
-            </div>
-            <div className="table-count">
-            {this.state.goods.map(g =>
-            <div key={g.id}>
-              <span>{g.count}</span>
-            </div>
-            )}
-            </div>
-          </div>
-        </div>
+
+  render() {
+
+    return (
+      <div className="container">
+      <Table data={this.state.goods}/>
       </div>
-      )
+        )
     }
 }
