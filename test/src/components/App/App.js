@@ -9,8 +9,6 @@ export class App extends Component {
   }
   SORTS = {
     default: list => list,
-    name: list =>list.sort(({name}, {name: nextName}) => name-nextName),
-    date: list =>list.sort(({date}, {date: nextDate}) => date-nextDate),
     count: list =>list.sort(({ count }, { count: nextCount }) => count - nextCount)
   };
     componentDidMount() {
