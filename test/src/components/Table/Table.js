@@ -1,13 +1,19 @@
 import React from 'react';
 import './table.css';
 
-export const Table = ({data}) => (
+export const Table = ({data, setSort}) => (
 <table className="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Count</th>
+      <th>
+      <button onClick={() => setSort("name")}>Name</button>
+      </th>
+      <th>
+      <button onClick={() => setSort("date")}>Date</button>
+      </th>
+      <th>
+      <button onClick={() => setSort("count")}>Count</button>
+      </th>
     </tr>
   </thead>
   <tbody>
