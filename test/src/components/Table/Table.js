@@ -8,8 +8,7 @@ export const Table = ({data, setSort}) => (
       <th>
       <button onClick={() => setSort("name")}>Name</button>
       </th>
-      <th>
-      <button onClick={() => setSort("date")}>Date</button>
+      <th>Date
       </th>
       <th>
       <button onClick={() => setSort("count")}>Count</button>
